@@ -1,0 +1,18 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+.main {
+    border: 2px solid blue;
+    &__video-section-container {
+        @include padding($right: $mobile-p-r, $left: $mobile-p-l);
+        @include tablet {
+            @include padding($right: $td-p-r, $left: $td-p-l); 
+        }
+        @include desktop {
+            @include padding($right: $desktop-p-r, $left: $desktop-p-l); 
+        }
+    }
+    &__video-details{
+
+    }
+}

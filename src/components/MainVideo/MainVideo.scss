@@ -1,0 +1,24 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+.current-video {
+    @include flex();
+    width: 100%;
+    height: 30vh;
+    background-color: $brainflix-darkBlack;
+    @include tablet {
+        height: 40vh;
+        padding: 0 40px;
+    }
+    @include desktop {
+        height: 65vh;
+        padding: 0 200px;
+    }
+    
+    &__container {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        aspect-ratio: 16 / 9;
+    }
+}

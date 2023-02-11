@@ -35,7 +35,7 @@
     }
     &__searchbar {
         border: 1px solid $mercury;
-        border-radius: 3%;
+        border-radius: 4px;
         width: 80%;
         @include tablet {
             flex-basis: 60%;
@@ -65,10 +65,12 @@
         border-radius: 50%;
         object-fit: cover;
         object-position: 20%;
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         background-color: $mercury;
         @include tablet {
+            width: 50px;
+            height: 50px;
             order: 3;
         }
     }
@@ -78,10 +80,14 @@
         color: $white;
         background-color: $brainflix-blue;
         border: none;
-        border-radius: 3%;
+        border-radius: 4px;
         font-size: 1rem;
-        padding: 8px;
+        height: 40px;
+        // padding: 8px;
         height: 3rem;
+        &:hover {
+            background-color: $brainflix-darkBlue;
+        }
         @include tablet {
             order: 2;
             flex-basis: 25%;

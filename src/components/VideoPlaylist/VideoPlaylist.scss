@@ -1,0 +1,16 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+.video {
+    border: solid 2px orange;
+    &__playlist-title {
+        color: $silver;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    &__playlist-cards {
+        // border: 2px solid red;
+        width: fit-content;
+    }
+
+}
