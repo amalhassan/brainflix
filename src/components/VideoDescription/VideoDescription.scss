@@ -1,0 +1,47 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+.video-desc {
+    &__title {
+        font-family: $avenir-demi;
+        font-size: $m-header;
+        @include padding($top: $mobile-p-t, $bottom: $mobile-p-b);
+    }
+    &__snapshot {
+        @include flex($j-content: space-between); 
+        @include padding($top: $mobile-p-t, $bottom: $mobile-p-b);
+        border-width: 1px 0 1px 0;
+        border-color: $mercury;
+        border-style: solid;
+        color: $silver;
+        &--left {
+            row-gap: 10px;
+            &__channel {
+                font-family: $avenir-demi;
+                color: $brainflix-darkBlack;
+            }
+        }
+        &--right {
+            row-gap: 5px;
+            // flex-basis: 30%;
+            &__icons {
+                @include flex($j-content: space-around, $a-items: flex-start);
+                column-gap: 5px;
+            }
+        }
+    }
+    &__snapshot-items {
+        @include flex($direction: column);
+        @include tablet {
+            flex-direction: row;
+            column-gap: 30px;
+            // flex-basis: 50%;
+        }
+    }
+    &__text {
+        font-size: 1.2rem;
+        line-height: $m-body-line-height;
+        padding: 15px 0;
+
+    }
+}

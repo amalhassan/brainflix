@@ -2,7 +2,7 @@ import React from 'react'
 import './VideoCard.scss'
 
 function VideoCard(props) {
-  console.log(props);
+  // console.log(props);
   const {id, image, title, channel} = props;
   const clickedVideo = () => {
     props.updateActiveVideo(id);

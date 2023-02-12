@@ -4,6 +4,7 @@ import videoDetailsData from '../../data/video-details.json'
 import './Main.scss'
 import MainVideo from '../MainVideo/MainVideo'
 import VideoPlaylist from '../VideoPlaylist/VideoPlaylist'
+import VideoDescription from '../VideoDescription/VideoDescription'
 function Main() {
     // console.log(videoPlaylistData);
     const allVideoData = videoPlaylistData;
@@ -15,15 +16,18 @@ function Main() {
     
 
     // console.log(currentVideo)
-    const updateVideoDisplayed = (id) => {
-        const selectedVideo = allVideoData.find(video => {
+    const getVideoToDisplay = (id) => {
+        const getVideo = allVideoData.find(video => {
             return video.id === id;
         })
-        setCurrentVideo(selectedVideo);
-        setCurrentVideoInfo(selectedVideo);
+        const getVideoInfo = videoInfo.find(video => {
+            return video.id === id;
+        })
+        setCurrentVideo(getVideo);
+        setCurrentVideoInfo(getVideoInfo );
     }
     const updateActiveVideo = (id) => {
-        updateVideoDisplayed(id);
+        getVideoToDisplay(id);
     }
   return (
     <div className="main">
@@ -33,18 +37,18 @@ function Main() {
         />
         <div className="main__video-section-container">
             <div className="main__video-details">
-                {/* <VideoDescription
-                    currentVideo={currentVideo}
-                /> */}
+                <VideoDescription
+                    currentVideoInfo={currentVideoInfo}
+                />
                 {/* <CommentForm/> */}
                 {/* <DisplayComments
-                    currentVideo={currentVideo}
+                    comments={currentVideoInfo.comments}
                 /> */}
             </div>
             <VideoPlaylist 
-            currentVideo={currentVideo}
-            allVideoData={allVideoData}
-            updateActiveVideo = {updateActiveVideo}
+                currentVideo={currentVideo}
+                allVideoData={allVideoData}
+                updateActiveVideo = {updateActiveVideo}
             />
         </div>
     </div>
