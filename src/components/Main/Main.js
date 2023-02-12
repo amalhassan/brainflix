@@ -5,6 +5,7 @@ import './Main.scss'
 import MainVideo from '../MainVideo/MainVideo'
 import VideoPlaylist from '../VideoPlaylist/VideoPlaylist'
 import VideoDescription from '../VideoDescription/VideoDescription'
+import CommentSection from '../CommentSection/CommentSection'
 function Main() {
     // console.log(videoPlaylistData);
     const allVideoData = videoPlaylistData;
@@ -40,7 +41,7 @@ function Main() {
                 <VideoDescription
                     currentVideoInfo={currentVideoInfo}
                 />
-                {/* <CommentForm/> */}
+                <CommentSection comments={currentVideoInfo.comments} />
                 {/* <DisplayComments
                     comments={currentVideoInfo.comments}
                 /> */}

@@ -1,0 +1,9 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+.comment-section {
+    &__count {
+        font-family: $avenir-demi;
+        padding-bottom: 1rem;
+    }
+}

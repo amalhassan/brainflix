@@ -2,11 +2,16 @@
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 .video {
-    border: solid 2px orange;
+    // border: solid 2px orange;
+    @include desktop {
+        @include padding($top: $mobile-p-t, $left: $mobile-p-l, $bottom: $mobile-p-b);
+    }
     &__playlist-title {
+        font-size: 1.3rem;
         color: $silver;
         text-transform: uppercase;
         letter-spacing: 2px;
+        @include padding($top: $mobile-p-t, $bottom: $mobile-p-b);
     }
     &__playlist-cards {
         // border: 2px solid red;

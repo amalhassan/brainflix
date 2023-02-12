@@ -12,6 +12,9 @@
     @include tablet {
         max-width: 65%;
     }
+    @include desktop {
+        max-width: 90%;
+    }
     &__img-container{
         max-width: 9rem;
         max-height: 5rem;

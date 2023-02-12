@@ -4,15 +4,20 @@
 .main {
     border: 2px solid blue;
     &__video-section-container {
+        @include flex($direction: column);
         @include padding($right: $mobile-p-r, $left: $mobile-p-l);
         @include tablet {
             @include padding($right: $td-p-r, $left: $td-p-l); 
         }
         @include desktop {
+            flex-direction: row;
             @include padding($right: $desktop-p-r, $left: $desktop-p-l); 
         }
     }
     &__video-details{
-        border: 2px solid yellow;
+        @include desktop {
+            flex-basis: 83%;
+            border-right: 1px solid $silver;
+        }
     }
 }

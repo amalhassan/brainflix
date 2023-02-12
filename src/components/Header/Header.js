@@ -16,7 +16,7 @@ function Header() {
                 <input className="header__input" type="text" placeholder='Search'></input>
             </div>
             <img className="header__avatar" src={ProfileImage} alt="avatar"/>
-            <button className="header__upload-button" type="submit"><img className="header__button-icon" src={UploadIcon} alt=""/>Upload</button>
+            <button className="header__upload-button" type="submit"><img className="btn-icon" src={UploadIcon} alt=""/>Upload</button>
         </div>
 
     </div>

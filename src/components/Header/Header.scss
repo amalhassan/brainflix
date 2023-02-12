@@ -75,26 +75,11 @@
         }
     }
     &__upload-button {
-        position: relative;
+        @extend .btn;
         flex-basis: 100%;
-        color: $white;
-        background-color: $brainflix-blue;
-        border: none;
-        border-radius: 4px;
-        font-size: 1rem;
-        height: 40px;
-        // padding: 8px;
-        height: 3rem;
-        &:hover {
-            background-color: $brainflix-darkBlue;
-        }
         @include tablet {
             order: 2;
             flex-basis: 25%;
         }
-    }
-    &__button-icon {
-        position: absolute;
-        left: 5px;
     }
 }
