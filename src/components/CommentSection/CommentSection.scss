@@ -2,6 +2,11 @@
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 .comment-section {
+    border-bottom: 2px solid $mercury;
+    @include desktop {
+        border: none;
+        padding-bottom: $mobile-p-b;
+    }
     &__count {
         font-family: $avenir-demi;
         padding-bottom: 1rem;

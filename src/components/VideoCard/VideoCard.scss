@@ -4,7 +4,6 @@
 .videoCard {
     @include flex();
     width:100%;
-    // border: 2px solid orange;
     padding: 8px;
     column-gap: 15px;
     min-width: 50%;
@@ -33,6 +32,6 @@
         font-size: 1.3rem;
     }
     &__channel {
-        color: $silver;
+        color: $brainflix-black;
     }
 }

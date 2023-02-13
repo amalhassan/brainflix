@@ -1,64 +1,57 @@
 @use '../../styles/partials/global.scss' as *;
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
-
 .header {
     @include flex($direction: column, $j-content: center, $a-items: center);
-    border: 2px solid red;
     @include padding($top: $mobile-p-t, $right: $mobile-p-r, $bottom: $mobile-p-b, $left: $mobile-p-l);
     row-gap: 10px;
     @include tablet {
         @include flex($direction: row);
+        justify-content: space-between;
     }
-    &__logo-container {
-        @include tablet {
-            border: 2px solid green;
-            flex-basis: 50%;
-        }
-        // @include desktop {
-        //     flex-basis: 80%;
-        // }
+    @include desktop {
+        row-gap: 70px;
     }
     &__logo {
-        width:8rem;
+        width: 8rem;
     }
     &__nav {
         @include flex($j-content: space-between);
-        // border: 2px solid green;
         width: 100%;
         flex-wrap: wrap;
         row-gap: 10px;
         @include tablet {
             flex-wrap: nowrap;
-
+            flex-basis: 60%;
+        }
+        @include desktop {
+            flex-basis: 40%;
         }
     }
     &__searchbar {
+        @include flex($j-content: flex-start);
+        column-gap: 2px;
         border: 1px solid $mercury;
         border-radius: 4px;
         width: 80%;
         @include tablet {
-            flex-basis: 60%;
-
+            flex-basis: 50%;
+            column-gap: 1px;
         }
-        // @include desktop {
-        //     flex-basis: 40%;
-        // }
     }
-    &__search-icon {
-       margin: 1px;
+    &__icon {
+       align-self: center;
+       height: 60%;
     }
     &__input {
-        width: 94%;
-        height: 100%;
+        flex-grow: 2;
         font-size: 1rem;
         border: none;
         &:focus {
             outline: none;
         }
         @include tablet {
-            width: 93%;
-
+            width: 99%;
         }
     }
     &__avatar {
@@ -76,10 +69,14 @@
     }
     &__upload-button {
         @extend .btn;
+        padding: 10px;
         flex-basis: 100%;
         @include tablet {
             order: 2;
-            flex-basis: 25%;
+            flex-basis: 35%;
+        }
+        @include desktop {
+            flex-basis: 30%;
         }
     }
 }

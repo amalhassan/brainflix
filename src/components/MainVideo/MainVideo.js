@@ -1,9 +1,7 @@
 import React from 'react'
 import './MainVideo.scss'
 function MainVideo(props) {
-    // console.log(props.video)
     const { image, video: videoSrc } = props;
-    // console.log(videoSrc);
   return (
     <div className="current-video">
         <video className="current-video__container" controls poster={image} width="100%" height="100%" >

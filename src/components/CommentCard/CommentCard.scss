@@ -1,0 +1,46 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+.comment-card {
+    @include flex();
+    @include padding($bottom: $mobile-p-b);
+    border-top: 2px solid $mercury;
+    &__avatar {
+        padding-right: 20px;
+        align-self: start;
+    }
+    &__wrapper {
+        font-family: $avenir-regular;
+        @include flex($direction:column);
+        column-gap: 10px;
+        flex-grow: 2;
+        min-width: 80%;
+    }
+    &__title-section {
+        flex-basis: 100%;
+        @include flex($j-content:space-between);
+        @include padding($top: $mobile-p-t, $bottom: $mobile-p-b);
+    }
+    &__name {
+        font-family: $avenir-bold;
+        color: $brainflix-black;
+        font-size: 1.1rem;
+    }
+    &__date {
+        color: $silver;
+        font-size: 1.1rem;
+        @include desktop {
+            padding-right: 1.5rem;
+        }
+    }
+    &__text-container {
+        word-break: break-word;
+    }
+    &__text {
+        color: $brainflix-black;
+        font-family: $avenir-regular;
+        line-height: $m-body-line-height;
+        width:96%;
+        font-size: 1.25rem;
+    }
+}

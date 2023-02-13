@@ -2,7 +2,6 @@
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 .main {
-    border: 2px solid blue;
     &__video-section-container {
         @include flex($direction: column);
         @include padding($right: $mobile-p-r, $left: $mobile-p-l);

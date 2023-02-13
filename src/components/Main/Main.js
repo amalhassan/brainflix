@@ -7,18 +7,14 @@ import VideoPlaylist from '../VideoPlaylist/VideoPlaylist'
 import VideoDescription from '../VideoDescription/VideoDescription'
 import CommentSection from '../CommentSection/CommentSection'
 function Main() {
-    // console.log(videoPlaylistData);
-    const allVideoData = videoPlaylistData;
-    const [currentVideo, setCurrentVideo] = useState(allVideoData[0]);
+    // assigned json data to variables, used the variables as default data through useState 
+    const allVideoPlaylistData = videoPlaylistData;
+    const [currentVideo, setCurrentVideo] = useState(allVideoPlaylistData[0]);
     const videoInfo = videoDetailsData;
-    // console.log(videoInfo);
     const [currentVideoInfo, setCurrentVideoInfo] = useState(videoInfo[0]);
-    // console.log(currentVideoInfo);
-    
-
-    // console.log(currentVideo)
+    // function to find the data of the clicked VideoCard component, return the id from json object variables and update state 
     const getVideoToDisplay = (id) => {
-        const getVideo = allVideoData.find(video => {
+        const getVideo = allVideoPlaylistData.find(video => {
             return video.id === id;
         })
         const getVideoInfo = videoInfo.find(video => {
@@ -27,6 +23,7 @@ function Main() {
         setCurrentVideo(getVideo);
         setCurrentVideoInfo(getVideoInfo );
     }
+    // function to pass id to getVideoToDisplay
     const updateActiveVideo = (id) => {
         getVideoToDisplay(id);
     }
@@ -42,18 +39,14 @@ function Main() {
                     currentVideoInfo={currentVideoInfo}
                 />
                 <CommentSection comments={currentVideoInfo.comments} />
-                {/* <DisplayComments
-                    comments={currentVideoInfo.comments}
-                /> */}
             </div>
             <VideoPlaylist 
                 currentVideo={currentVideo}
-                allVideoData={allVideoData}
+                allVideoPlaylistData={allVideoPlaylistData}
                 updateActiveVideo = {updateActiveVideo}
             />
         </div>
     </div>
   )
 }
-
 export default Main
