@@ -1,0 +1,141 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/variables/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+.upload-form {
+    color: $brainflix-black;
+    border-top: 2px solid $mercury;
+    padding: 2rem;
+    &__title {
+        font-size: 2rem;
+        padding-bottom: 2rem;
+        font-family: $avenir-demi;
+        @include tablet {
+            border-bottom: 2px solid $mercury;
+            font-size: 2.3rem;
+            font-family: $avenir-bold;
+        }
+    }
+    &__msg {
+        font-size: 1.5rem;
+        font-family: $avenir-demi;
+        text-align: center;
+        padding: 5px 0 0 0;
+      
+    }
+    &__section {
+        @include flex($direction: column);
+        row-gap: 40px;
+        flex-wrap: wrap;
+        @include tablet {
+            justify-content: space-around;
+            column-gap: 15px;
+            align-content: center;
+            padding-top: 2rem;
+        }
+        @include desktop {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__field {
+        @include flex($direction: column);
+        row-gap: 5px;
+    }
+    &__label {
+        font-family: $avenir-demi;
+        color: $silver;
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    &__image-section {
+        @include desktop {
+            width:33%;
+        }
+    }
+    &__image {
+        border-radius: 4px;
+        width: 100%;
+        max-height: 100%;
+        @include tablet {
+            max-width: 45%;
+        }
+        @include desktop {
+            max-width: 100%;
+        }
+    }
+    &__text-section {
+        @include flex($direction: column);
+        row-gap: 25px;
+        @include desktop {
+            height: 100%;
+            width: 65%;
+        }
+    }
+    &__textbox {
+        background-color: $alabaster;
+        border: 1px solid $mercury;
+        resize: none;
+        border-radius: 4px;
+        padding: 19px;
+        &::placeholder {
+            font-family: $avenir-regular;
+            color: $brainflix-black;
+            opacity: 1;
+            font-size: 1.2rem;
+        }
+        &:active {
+            outline-color: $brainflix-blue;
+        }
+        @include tablet {
+            height: 2.5rem;
+            padding: 4px;
+        }
+    }
+    &__textbox--description {
+        height: 8rem;
+        @include tablet {
+            height: 6rem;
+        }
+        @include desktop {
+            height: 8rem;
+        }
+    }
+    &__button-section {
+        @include flex($direction: column);
+        width:100%;
+        row-gap: 20px;
+        @include tablet {
+            flex-direction: row-reverse;
+            column-gap: 15px;
+            border-top: 2px solid $mercury;
+            padding-top: 2rem;
+            &:nth-child(1) {
+                order: 2;
+            }
+        }
+        @include desktop {
+            flex-grow: 2;
+        }
+    }
+    &__button {
+        @extend .btn;
+        padding: 20px;
+        font-family: $avenir-regular; 
+        @include tablet {
+            width: 25%;
+        }
+        @include tablet {
+            width: 15%;
+        }
+    }
+    &__cancel {
+        @extend .upload-form__button;
+        background-color: $white;
+        color: $brainflix-blue;
+        &:hover {
+            color: $white;
+            background-color: $brainflix-darkBlue;       
+        }
+    }
+}
