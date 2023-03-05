@@ -1,0 +1,41 @@
+// Typography
+$light: 300;
+$normal: 400;
+$demibold: 600;
+$bold: 700;
+@font-face {
+    font-family: 'AvenirNextRegular';
+    font-weight: $normal;
+    font-style: normal;
+    src: url(../../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"),
+    url(../../../assets/fonts/AvenirNextLTPro.ttf) format(truetype);
+}
+@font-face {
+    font-family: 'AvenirNextDemi';
+    font-weight: $demibold;
+    font-style: normal;
+    src: url(../../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"),
+    url(../../../assets/fonts/AvenirNextLTProDemi.ttf) format(truetype);
+}
+@font-face {
+    font-family: 'AvenirNextBold';
+    font-weight: $bold;
+    font-style: normal;
+    src: url(../../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"),
+    url(../../../assets/fonts/AvenirNextLTProBold.ttf) format(truetype);
+}
+$avenir-regular: "AvenirNextRegular", sans-serif;
+$avenir-demi: "AvenirNextDemi", sans-serif;
+$avenir-bold: "AvenirNextBold", sans-serif;
+// Mobile font sizes and line height
+$m-header: 2.3rem;
+$m-header-line-height: 2.5rem;
+$m-body-copy: 1.125rem;
+$m-body-line-height: 1.5rem;
+// Tablet and desktop (td) font size and line height
+$td-section-header: 2.625rem;
+$td-sh-line-height: 2.8rem;
+$td-sub-header: 1.875rem;
+$td-subheader-line-height: 2rem;
+$td-body-copy: 1.2rem;
+$td-body-line-height: 1.5rem;

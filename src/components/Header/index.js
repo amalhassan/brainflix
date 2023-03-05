@@ -1,15 +1,18 @@
 import React from 'react'
+// import {Link} from 'react-router-dom'
 import './Header.scss';
 import Logo from '../../assets/BrainFlix-logo.svg'
 import SearchIcon from '../../assets/icons/search.svg'
 import ProfileImage from '../../assets/images/Mohan-muruge.jpg' 
 import UploadIcon from '../../assets/icons/upload.svg'
-function Header() {
+const Header = () => {
   return (
     <div className="header">
-        <div className="header__logo-container">
-            <a href="top"><img className="header__logo" src={Logo} alt="logo"/></a>
-        </div>
+        {/* <Link to="/"> */}
+          <div className="header__logo-container">
+              <img className="header__logo" src={Logo} alt="logo"/>
+          </div>
+        {/* </Link> */}
         <div className="header__nav">
             <div className="header__searchbar">
                 <img className="header__icon" src={SearchIcon} alt=""/>
@@ -21,4 +24,5 @@ function Header() {
     </div>
   )
 }
+
 export default Header

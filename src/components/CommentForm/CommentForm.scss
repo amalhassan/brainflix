@@ -1,5 +1,5 @@
 @use '../../styles/partials/global.scss' as *;
-@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/variables/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 .comment-form {
     @include padding($bottom: 2rem, $right: 1rem);
