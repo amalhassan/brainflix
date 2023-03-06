@@ -5,5 +5,4 @@ const UploadVideo = () => {
     <UploadForm />
   )
 }
-
 export default UploadVideo

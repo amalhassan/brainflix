@@ -26,7 +26,7 @@ const UploadForm = () => {
             setNotifyMsg('You have uploaded your video!');
             setTimeout(() => {
                 navigate("/");
-            }, "5000")
+            }, "3000")
          }      
     }
   return (

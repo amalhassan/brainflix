@@ -2,20 +2,25 @@ import React from 'react'
 import './CommentSection.scss'
 import CommentForm from '../CommentForm/CommentForm'
 import CommentCard from '../CommentCard/CommentCard'
-function CommentSection({comments}) {
-  console.log(comments)
+const CommentSection = ({commentArray, id, setCurrentVideoInfo}) => {
   return (
-    <div className="comment-section">
-        {/* <p className="comment-section__count">{comments.length} Comments</p> */}
-        <CommentForm />
-        {comments.map((comment) => 
+      <div className="comment-section">
+        { commentArray !== undefined ?
+        <>
+        {<p className="comment-section__count">{commentArray.length} Comments</p>}
+        <CommentForm id={id} setCurrentVideoInfo={setCurrentVideoInfo}/>
+        {commentArray.sort(
+                (a, b) => b.timestamp - a.timestamp,
+            ).map((comment) => 
         (<CommentCard
           key={comment.id}
           name={comment.name}
           timestamp={comment.timestamp}
           comment={comment.comment}
         />))}
-    </div>
+        </> : null
+        }
+      </div>
   )
 }
 export default CommentSection

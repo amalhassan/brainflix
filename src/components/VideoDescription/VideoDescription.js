@@ -3,7 +3,7 @@ import './VideoDescription.scss'
 import viewsIcon from '../../assets/icons/views.svg'
 import likesIcon from '../../assets/icons/likes.svg'
 import { dateFormatter } from '../../utils';
-function VideoDescription(props) {
+const VideoDescription = (props) => {
     const {title, channel, views: viewsCount, timestamp, likes, description} = props.currentVideoInfo;
   return (
     <section className="video-desc">

@@ -1,6 +1,6 @@
 import React from 'react'
 import './MainVideo.scss'
-function MainVideo(props) {
+const MainVideo = (props) => {
     const { image, video: videoSrc } = props;
   return (
     <div className="current-video">
@@ -10,5 +10,4 @@ function MainVideo(props) {
     </div>
   )
 }
-
 export default MainVideo

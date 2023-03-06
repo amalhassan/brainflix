@@ -19,9 +19,7 @@ const Header = () => {
                 <input className="header__input" type="text" placeholder='Search'></input>
             </div>
             <img className="header__avatar" src={ProfileImage} alt="avatar"/>
-            
-              <button className="header__upload-button" type="submit"><Link to="/upload" className="header__upload-link"><img className="icon" src={UploadIcon} alt="upload icon"/>Upload </Link></button>
-            
+            <button className="header__upload-button" type="submit"><Link to="/upload" className="header__upload-link"><img className="icon" src={UploadIcon} alt="upload icon"/>Upload </Link></button>
         </div>
     </div>
   )

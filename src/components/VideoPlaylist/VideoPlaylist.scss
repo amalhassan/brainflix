@@ -15,4 +15,11 @@
     &__playlist-cards {
         width: fit-content;
     }
+    &__playlist-link {
+        text-decoration: none;
+        &:visited, &:active, &:hover, &:link {
+            text-decoration: none;
+            color: $brainflix-black; 
+        }
+    }
 }

@@ -2,8 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './VideoPlaylist.scss'
 import VideoCard from '../VideoCard/VideoCard'
-function VideoPlaylist(props) {
-  // console.log(props);
+const VideoPlaylist = (props) => {
+  console.log("playlist in vid", props)
   return (
     <div className="video">
         <h2 className="video__playlist-title">Next Videos</h2>
@@ -14,13 +14,12 @@ function VideoPlaylist(props) {
                     return props.currentVideo.id !== video.id;
                 }).map ((info) => 
                 (
-                  <Link to={`/${info.id}`} key={info.id}>
+                  <Link className="video__playlist-link" to={`/${info.id}`} key={info.id}>
                     <VideoCard 
                         id={info.id}
                         image={info.image}
                         title={info.title}
                         channel={info.channel}
-                        getVideoToDisplay = {props.getVideoToDisplay}
                     />
                   </Link>
                 ))}  
@@ -28,5 +27,4 @@ function VideoPlaylist(props) {
     </div>
   )
 }
-
 export default VideoPlaylist

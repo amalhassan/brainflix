@@ -1,18 +1,16 @@
-import React from 'react'
-import { useParams } from 'react-router-dom';
+import React, {useEffect} from 'react'
+import { useParams, useLocation } from 'react-router-dom';
 import Main from "../../components/Main/Main";
-
-const SelectedVideo = () => {
+const SelectedVideo = ({allPlaylist, currentVideo, currentVideoInfo, getVideoData, setCurrentVideoInfo}) => {
   const {id} = useParams();
-  console.log("para ", id);
-  // useEffect(() => {
-
-  // }, [])
+  const location = useLocation();
+  useEffect(() => {
+    getVideoData(id);
+  }, [location])
   return (
     <> 
-      <Main />
+      <Main allPlaylist={allPlaylist} currentVideo={currentVideo} currentVideoInfo={currentVideoInfo} setCurrentVideoInfo={setCurrentVideoInfo}/>
     </>
   )
 }
-
 export default SelectedVideo

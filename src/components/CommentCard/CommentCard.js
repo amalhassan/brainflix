@@ -1,7 +1,7 @@
 import React from 'react'
 import './CommentCard.scss'
 import { dateFormatter } from '../../utils';
-function CommentCard(props) {
+const CommentCard = (props) => {
     const {id, name, timestamp, comment} = props;
   return (
     <div className="comment-card" id={id}>

@@ -14,6 +14,10 @@
     }
     &__logo {
         width: 8rem;
+        @include tablet {
+            padding-left: 30px;
+            width: 10rem;
+        }
     }
     &__nav {
         @include flex($j-content: space-between);
