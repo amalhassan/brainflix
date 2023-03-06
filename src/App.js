@@ -12,7 +12,6 @@ const App = () => {
   const [allPlaylist, setAllPlaylist] = useState([]);
   const getVideoData = async (id) => {
     let currentAllPlaylist = allPlaylist;
-    id = id || currentAllPlaylist[0].id;
     console.log("id in app", id);
     console.log("playlist in app", currentAllPlaylist)
     if (currentAllPlaylist.length === 0)  {
@@ -26,6 +25,7 @@ const App = () => {
           console.log(error);
         })
     }
+    id = id || currentAllPlaylist[0].id;
     setCurrentVideo(id ? currentAllPlaylist.find(video => 
        video.id === id  
     ) : currentAllPlaylist[0].id)
