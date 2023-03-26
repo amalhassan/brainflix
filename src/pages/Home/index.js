@@ -1,12 +1,8 @@
-import React, {useEffect} from 'react'
-import Main from '../../components/Main/Main'
-const Home = ({getVideoData, currentVideo, currentVideoInfo, allPlaylist, setCurrentVideoInfo}) => {
-  console.log("home", currentVideo)
-  useEffect(() => {
-    getVideoData();
-  }, [])
+import React from 'react';
+import Main from '../../components/Main/Main';
+const Home = () => {
   return (
-    <Main allPlaylist={allPlaylist} currentVideo={currentVideo} currentVideoInfo={currentVideoInfo} setCurrentVideoInfo={setCurrentVideoInfo}/>
+    <Main />
   )
 }
 export default Home

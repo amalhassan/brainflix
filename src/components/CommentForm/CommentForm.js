@@ -2,17 +2,17 @@ import React from 'react'
 import './CommentForm.scss'
 import ProfileImage from '../../assets/images/Mohan-muruge.jpg'
 import CommentIcon from '../../assets/icons/add_comment.svg' 
-import { baseURL, apiKEY } from '../../constant'
+import { baseURL} from '../../constant'
 import axios from 'axios'
 const CommentForm = ({id, setCurrentVideoInfo}) => {
   const submitComment = (e) => {
     e.preventDefault();
     const comment = e.target.comment.value;
-    axios.post(`${baseURL}/videos/${id}/comments?api_key=${apiKEY}`, {
+    axios.post(`${baseURL}/${id}/comments`, {
       name: "Mohan Muruge",
       comment: comment
     }).then(res => {
-      axios.get(`${baseURL}/videos/${id}?api_key=${apiKEY}`
+      axios.get(`${baseURL}/${id}`
       ).then(res => {
         setCurrentVideoInfo(res.data);
         document.getElementById('form').reset();
