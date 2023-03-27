@@ -1,9 +1,9 @@
-import React from 'react'
-import './CommentForm.scss'
-import ProfileImage from '../../assets/images/Mohan-muruge.jpg'
-import CommentIcon from '../../assets/icons/add_comment.svg' 
-import { baseURL} from '../../constant'
-import axios from 'axios'
+import React from 'react';
+import './CommentForm.scss';
+import ProfileImage from '../../assets/images/Mohan-muruge.jpg';
+import CommentIcon from '../../assets/icons/add_comment.svg' ;
+import { baseURL} from '../../constant';
+import axios from 'axios';
 const CommentForm = ({id, setCurrentVideoInfo}) => {
   const submitComment = (e) => {
     e.preventDefault();

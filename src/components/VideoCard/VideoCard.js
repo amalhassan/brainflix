@@ -1,8 +1,6 @@
 import React from 'react'
-// import {Link} from 'react-router-dom'
 import './VideoCard.scss'
-const VideoCard = (props) => {
-  const {id, image, title, channel} = props;
+const VideoCard = ({id, image, title, channel}) => {
   return (
       <div className="videoCard" id={id}>
           <div className="videoCard__img-container" alt="thumbnail ">

@@ -16,9 +16,8 @@ const Main = () => {
     useEffect(() => {
         const getPlaylist = async() => {
             try {
-                if (allPlaylist.length == 0) {
+                if (allPlaylist.length === 0) {
                     const res = await axios.get(baseURL);
-                    console.log(res.data);
                     setAllPlaylist(res.data);
                     return res.data
                 } else {
@@ -31,9 +30,6 @@ const Main = () => {
         const getVideoInfo = async(id) => {
             try {
                 const res = await axios.get(`${baseURL}/${id}`);
-                console.log("seceond api id", id);
-                console.log("second api", res.data);
-                console.log("second api location ", location);
                 return setCurrentVideoInfo(res.data);   
             } catch (error) {
                 console.log(error)
@@ -42,18 +38,36 @@ const Main = () => {
         (async function () { 
             const videos =  await getPlaylist();  
             if (location.pathname === "/")  {
-                console.log(videos);
                 id = videos[0].id;
                 setCurrentVideo(videos[0]);
                 getVideoInfo(id);
             } else {
                 setCurrentVideo(videos.find(video => video.id === id));
                 getVideoInfo(id);
-                console.log("playlist in 2nd api", allPlaylist);
-                console.log("current vid", currentVideo)
             }
-        } ())   
-    }, [location])   
+        } ())
+    }, [location.pathname, allPlaylist, id])
+    useEffect(() => {
+        const abortController = new AbortController();
+        const postUploadVideo = async (title, description) => {
+            try {
+            await axios.post(baseURL, {
+                    title: title,
+                    description: description
+            }, { signal: abortController.signal })    
+            } catch (error) {
+                console.log(error);
+            } 
+        }
+        if (location.state !== null) {
+            const {title, description} = location.state; 
+              window.history.replaceState({}, document.title);
+              postUploadVideo(title, description);
+        }
+        return () => {
+            abortController.abort();
+        }
+    }, [location.state])  
     return ( 
         <div className="main">
             <MainVideo
@@ -65,12 +79,11 @@ const Main = () => {
                     <VideoDescription
                         currentVideoInfo={currentVideoInfo}
                     />  
-                    <CommentSection commentArray={currentVideoInfo.comments} setCurrentVideoInfo={setCurrentVideoInfo} id={currentVideoInfo.id} />
-                    
+                    <CommentSection commentArray={currentVideoInfo.comments} setCurrentVideoInfo={setCurrentVideoInfo} id={currentVideoInfo.id} />       
                 </div>
                 <VideoPlaylist 
                     currentVideo={currentVideo}
-                    allPlaylist={allPlaylist} 
+                    allPlaylist={allPlaylist}
                 />
             </div>
         </div>

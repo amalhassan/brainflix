@@ -5,7 +5,14 @@
     &__title {
         font-family: $avenir-demi;
         font-size: $m-header;
+        color: $brainflix-black;
+        @include tablet {
+            font-size: 3rem;
+        }
         @include padding($top: $mobile-p-t, $bottom: $mobile-p-b);
+        @include desktop {
+            font-size: 2.3rem;
+        }
     }
     &__snapshot {
         @include flex($j-content: space-between); 
@@ -14,6 +21,10 @@
         border-color: $mercury;
         border-style: solid;
         color: $silver;
+        font-size: 1.3rem;
+        @include tablet {
+            font-size: 1rem;
+        }
         @include tablet {
             border-top: none
         }

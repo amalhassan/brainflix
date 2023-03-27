@@ -8,7 +8,7 @@
     background-color: $brainflix-darkBlack;
     @include tablet {
         height: 65vh;
-        padding: 0 100px;
+        padding: 0 50px;
     }
     @include desktop {
         height: 70vh;

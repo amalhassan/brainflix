@@ -11,8 +11,8 @@ const App = () => {
     <Header />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
-        <Route path=":id" element={<SelectedVideo />}></Route>
-        <Route path="/upload" element={<UploadVideo />}></Route>
+         <Route path=":id" element={<SelectedVideo />}></Route>
+        <Route path="/upload" element={<UploadVideo />}></Route> 
       </Routes>
     </BrowserRouter>
   </>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import VideoImage from '../../assets/images/Upload-video-preview.jpg'
 import PublishIcon from '../../assets/icons/publish.svg'
 import './UploadForm.scss'
@@ -11,23 +11,26 @@ const UploadForm = () => {
     const cancelledUpload = (e) => {
         console.log(e.target.id);
         if (e.target.id === 'cancel') {
-            console.log("data cancelled");
             document.getElementById('form').reset();
             cancelled = true;
         } 
     }
     const videoUploaded = (e) => {
-         e.preventDefault();
-         if (cancelled === false) {
+        e.preventDefault();
+        if (cancelled === false) {
             const title = e.target.title.value;
             const description = e.target.description.value;
-            console.log(title, description);
             document.getElementById('form').reset();
             setNotifyMsg('You have uploaded your video!');
             setTimeout(() => {
-                navigate("/");
+                navigate("/", { 
+                    state: {
+                        title: title,
+                        description: description,
+                    },   
+                });
             }, "3000")
-         }      
+        }   
     }
   return (
     <section className="upload-form">
@@ -36,7 +39,7 @@ const UploadForm = () => {
             <div className="upload-form__image-section">
                 <section className="upload-form__field">
                     <label className="upload-form__label" htmlFor="image">Video Thumbnail</label>
-                    <img className="upload-form__image" src={VideoImage}/>
+                    <img className="upload-form__image" src={VideoImage} alt=""/>
                 </section>
             </div>
             <div className="upload-form__text-section">
